@@ -12,11 +12,13 @@ export class Header extends Component<any, State> {
     super(props);
     this.state = { time: new Date() };
   }
-
+  componentDidMount() {
+    setInterval(() => this.setState({ time: new Date() }), 1000);
+  }
   render() {
     return (
-      <div className="d-flex justify-content-between align-items-center">
-        <h1 className="title">RemindMe</h1>
+      <div className="">
+        <h1 className="title m-0">RemindMe</h1>
         <span>{moment(this.state.time).format("LLLL")}</span>
       </div>
     );

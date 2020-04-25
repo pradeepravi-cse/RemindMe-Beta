@@ -23,6 +23,13 @@ export class ListItrator extends Component<props> {
         dataSource={this.props.data}
         renderItem={(item) => (
           <List.Item
+            className={
+              !moment(item.date).utc().isAfter(moment(new Date()).utc()) &&
+              this.props.actionFor === "ToDo"
+                ? "List--OutDated fadeInUp"
+                : "fadeInUp"
+            }
+            style={{ animationDelay: "300ms" }}
             actions={
               this.props.showAction
                 ? this.props.actionFor === "ToDo"
@@ -54,7 +61,14 @@ export class ListItrator extends Component<props> {
             }
           >
             <List.Item.Meta
-              title={item.reminder}
+              title={
+                <>
+                  {item.reminder}
+                  {!moment(item.date).utc().isAfter(moment(new Date()).utc()) &&
+                    this.props.actionFor === "ToDo" &&
+                    " (OutDated)"}
+                </>
+              }
               description={moment(item.date).format("DD MMM YYYY hh:mm a")}
             />
           </List.Item>

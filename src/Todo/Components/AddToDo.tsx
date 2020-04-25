@@ -14,6 +14,7 @@ export class AddToDo extends Component<any, State> {
   }
 
   render() {
+    console.log(this.state);
     const saveToStorage = () => {
       const ToDo = JSON.parse(localStorage.getItem("ToDo"));
       if (this.state.reminder !== "") {
@@ -53,23 +54,37 @@ export class AddToDo extends Component<any, State> {
 
     return (
       <div className="row">
-        <div className="col-10 d-flex">
+        <div className="col-12 col-md-10 d-flex my-2">
           <Input
             placeholder="What do you need to do?"
             onChange={(e) =>
               this.setState({ ...this.state, reminder: e.target.value })
             }
-            style={{ width: "80%" }}
             value={this.state.reminder}
           />
           <DatePicker
             onChange={(e) => this.setState({ ...this.state, date: e })}
+            className="d-none d-md-block"
             showTime={true}
             defaultValue={this.state.date}
+            style={{ width: "25%" }}
+            disabledDate={(current) => {
+              return current && current < moment();
+            }}
             format="DD MMM YYYY hh:mm A"
           />
         </div>
-        <div className="col-2 text-right">
+        <div className="col col-md-2 my-2 d-flex justify-content-between">
+          <DatePicker
+            onChange={(e) => this.setState({ ...this.state, date: e })}
+            className="d-block d-md-none w-50"
+            showTime={true}
+            defaultValue={this.state.date}
+            disabledDate={(current) => {
+              return current && current <= moment();
+            }}
+            format="DD MMM YYYY hh:mm A"
+          />
           <Button
             type="primary"
             className="Button Button--Primary"

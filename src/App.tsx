@@ -4,7 +4,7 @@ import { Header } from "./Header/Header";
 import { AddToDo } from "./Todo/Components/AddToDo";
 
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Switch,
   Redirect,
