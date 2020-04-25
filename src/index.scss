@@ -1,0 +1,23 @@
+@import "./Constants.scss";
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+.text-nodata {
+  font-size: 24px;
+  color: $light-gray;
+  small {
+    font-size: 16px;
+  }
+}
+.ant-list-item:hover {
+  &:hover .ant-list-item-action {
+    opacity: 1;
+  }
+}
+.ant-list-item-action {
+  transition: all 200ms ease;
+  display: flex;
+  opacity: 0;
+  align-items: center;
+}

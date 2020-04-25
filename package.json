@@ -1,0 +1,38 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "homepage": "http://pradeepravi-cse.github.io/RemindMe",
+  "scripts": {
+    "start": "Parcel ./src/index.html",
+    "build": "parcel build ./src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/antd": "^1.0.0",
+    "@types/lodash": "^4.14.150",
+    "@types/react": "^16.9.25",
+    "@types/react-dom": "^16.9.5",
+    "@types/react-router-dom": "^5.1.4",
+    "antd": "^4.1.4",
+    "bootstrap": "^4.4.1",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-feather": "^2.0.4",
+    "react-router-dom": "^5.1.2"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.2.0",
+    "less": "^3.11.1",
+    "parcel": "^1.12.4",
+    "parcel-plugin-less-js-enabled": "^1.0.2",
+    "sass": "^1.26.3",
+    "typescript": "^3.8.3"
+  }
+}

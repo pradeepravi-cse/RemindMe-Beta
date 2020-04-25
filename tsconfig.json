@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "rootDirs": ["./src"],
+    "baseUrl": ".",
+    "outDir": "dist",
+    "module": "esnext",
+    "target": "es6",
+    "lib": ["esnext", "dom"],
+    "sourceMap": true,
+    "allowJs": true,
+    "jsx": "react",
+    "rootDir": "src",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "typeRoots": ["node_modules/@types"]
+  },
+  "exclude": [
+    "node_modules",
+    "build",
+    "scripts",
+    "acceptance-tests",
+    "jest",
+    "src/setupTests.ts",
+    "coverage"
+  ],
+  "include": ["src/**/*", "./type.d.ts"]
+}
