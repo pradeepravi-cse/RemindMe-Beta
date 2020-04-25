@@ -66,10 +66,10 @@ export class AddToDo extends Component<any, State> {
             onChange={(e) => this.setState({ ...this.state, date: e })}
             className="d-none d-md-block"
             showTime={true}
-            defaultValue={this.state.date}
+            placeholder="Select Date & Time"
             style={{ width: "25%" }}
             disabledDate={(current) => {
-              return current && current < moment();
+              return current && current < moment().subtract(1, "day");
             }}
             format="DD MMM YYYY hh:mm A"
           />
@@ -79,9 +79,8 @@ export class AddToDo extends Component<any, State> {
             onChange={(e) => this.setState({ ...this.state, date: e })}
             className="d-block d-md-none w-50"
             showTime={true}
-            defaultValue={this.state.date}
             disabledDate={(current) => {
-              return current && current <= moment();
+              return current && current < moment().subtract(1, "day");
             }}
             format="DD MMM YYYY hh:mm A"
           />
